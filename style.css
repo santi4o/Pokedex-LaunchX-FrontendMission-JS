@@ -1,0 +1,156 @@
+* {
+    box-sizing: border-box;
+}
+
+:root {
+    --red-main: #e3350d;
+    --red-dark: #910d0a;
+    --gray-1: rgb(53, 53, 53);
+}
+
+body {
+    background-color:aquamarine;
+}
+
+main {
+    display: flex;
+    justify-content: center;
+}
+
+#leftCover {
+    width: 35%;
+    height: 45vw;
+    background-color: var(--red-main);
+    position: relative;
+    border: 1px solid black;
+    border-radius: 5%;
+}
+
+.shadow {
+    position: absolute;
+    background-color: var(--red-dark);
+    height: 1.2%;
+    border-bottom: 2px solid black;
+    border-top: 1px solid #ec7b61;
+}
+
+#rectangle1 {
+    width: 35%;
+    right: 0%;
+    top: 11.3%;
+}
+
+#rectangle2 {
+    width: 22.4%;
+    transform: rotate(-28deg);
+    right: 33%;
+    top: 15.28%;
+    border-radius: 2px;
+}
+
+#rectangle3 {
+    width: 46.3%;
+    left: 0%;
+    top: 19.28%;
+}
+
+#bordered1 {
+    position: absolute;
+    border-left: 2px solid var(--gray-1);
+    border-top: 2px solid var(--gray-1);
+    width: 44.5%;
+    height: 30%;
+    border-top-left-radius: 10%;
+    left: 3%;
+    top: 22.5%;
+}
+
+#bordered2 {
+    position: absolute;
+    width: 21.3%;
+    border-top: 2px solid var(--gray-1);
+    left: 46%;
+    top: 18.8%;
+    transform: rotate(-28deg);
+}
+
+#bordered3 {
+    position: absolute;
+    border-right: 2px solid var(--gray-1);
+    border-top: 2px solid var(--gray-1);
+    width: 25%;
+    height: 20%;
+    border-top-right-radius: 10%;
+    left: 66%;
+    top: 15%;
+}
+
+#leftContainer {
+    position: absolute;
+    width: 88%;
+    height: 70%;
+    border-bottom: 2px solid var(--gray-1);
+    border-left: 2px solid var(--gray-1);
+    border-right: 2px solid var(--gray-1);
+    bottom: 2%;
+    left: 3%;
+    border-bottom-left-radius: 5%;
+}
+
+#pin {
+    display: flex;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    overflow: hidden;
+    border: 2px solid black;
+    height: 88%;
+    width: fit-content;
+    position: absolute;
+    right: 0%;
+    bottom: 0%;
+}
+
+#pin div {
+    width: 0.5vw;
+}
+
+#pin > div:nth-child(1) {
+    background-color: #f03006;
+}
+
+#pin > div:nth-child(2) {
+    background-color: #ee9480;
+}
+
+#pin > div:nth-child(3) {
+    background-color: #e0330c;
+}
+
+#pin > div:nth-child(4) {
+    background-color: #aa2c0f;
+}
+
+#rightContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+
+#rightCoverTop1 {
+    width: 55%;
+    height: 8%;
+    background-color: var(--red-main);
+    background: linear-gradient(28deg, var(--red-main) 65%, rgba(255, 255, 255, 0) 65%);
+}
+
+#rightCover {
+    width: 31vw;
+    height: 79%;
+    background-color: var(--red-main);
+    position: relative;
+    border: 1px solid black;
+    border-top: none;
+    border-left: none;
+    border-bottom-right-radius: 5%;
+    align-self: flex-end;
+}
