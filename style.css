@@ -41,37 +41,37 @@ main {
 }
 
 #rectangle2 {
-    width: 22.4%;
-    transform: rotate(-28deg);
-    right: 33%;
-    top: 15.28%;
+    width: 26%;
+    transform: rotate(-30deg);
+    right: 33.05%;
+    top: 16.2%;
     border-radius: 2px;
 }
 
 #rectangle3 {
-    width: 46.3%;
+    width: 43%;
     left: 0%;
-    top: 19.28%;
+    top: 21%;
 }
 
 #bordered1 {
     position: absolute;
     border-left: 2px solid var(--gray-1);
     border-top: 2px solid var(--gray-1);
-    width: 44.5%;
+    width: 42%;
     height: 30%;
     border-top-left-radius: 10%;
     left: 3%;
-    top: 22.5%;
+    top: 24.6%;
 }
 
 #bordered2 {
     position: absolute;
-    width: 21.3%;
+    width: 25%;
     border-top: 2px solid var(--gray-1);
-    left: 46%;
-    top: 18.8%;
-    transform: rotate(-28deg);
+    left: 43%;
+    top: 19.9%;
+    transform: rotate(-30deg);
 }
 
 #bordered3 {
@@ -85,6 +85,37 @@ main {
     top: 15%;
 }
 
+#bordered4 {
+    position: absolute;
+    border-right: 2px solid var(--gray-1);
+    border-top: 2px solid var(--gray-1);
+    width: 46.5%;
+    height: 30%;
+    border-top-right-radius: 10%;
+    right: 3%;
+    top: 2.73%;
+}
+
+#bordered5 {
+    position: absolute;
+    width: 27%;
+    border-top: 2px solid var(--gray-1);
+    right: 47.5%;
+    top: -3.2%;
+    transform: rotate(30deg);
+}
+
+#bordered6 {
+    position: absolute;
+    border-left: 2px solid var(--gray-1);
+    border-top: 2px solid var(--gray-1);
+    width: 24.4%;
+    height: 20%;
+    border-top-left-radius: 10%;
+    left: 3%;
+    top: -9.4%;
+}
+
 #leftContainer {
     position: absolute;
     width: 88%;
@@ -95,6 +126,18 @@ main {
     bottom: 2%;
     left: 3%;
     border-bottom-left-radius: 5%;
+}
+
+#rightContainer {
+    position: absolute;
+    width: 94%;
+    height: 90%;
+    border-bottom: 2px solid var(--gray-1);
+    border-left: 2px solid var(--gray-1);
+    border-right: 2px solid var(--gray-1);
+    bottom: 2%;
+    left: 3%;
+    border-bottom-right-radius: 5%;
 }
 
 #pin {
@@ -130,22 +173,22 @@ main {
     background-color: #aa2c0f;
 }
 
-#rightContainer {
+#rightCover {
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
 }
 
-#rightCoverTop1 {
+#rightCoverTop {
     width: 55%;
-    height: 8%;
+    height: 9.5%;
     background-color: var(--red-main);
-    background: linear-gradient(28deg, var(--red-main) 65%, rgba(255, 255, 255, 0) 65%);
+    background: linear-gradient(30deg, var(--red-main) 65%, rgba(255, 255, 255, 0) 65%);
 }
 
-#rightCover {
+#rightCoverBottom {
     width: 31vw;
-    height: 79%;
+    height: 77.5%;
     background-color: var(--red-main);
     position: relative;
     border: 1px solid black;
@@ -153,4 +196,56 @@ main {
     border-left: none;
     border-bottom-right-radius: 5%;
     align-self: flex-end;
+    
+}
+
+#light1 {
+    position: absolute;
+    border-radius: 50%;
+    left: 6%;
+    top: 2.4%;
+    width: 7.5vw;
+    height: 7.5vw;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid black;
+}
+
+#light1 > div {
+    width: 85%;
+    height: 85%;
+    background-color: blue;
+    border-radius: 50%;
+    border: 1px solid black;
+    background-image: radial-gradient(white 2%, aqua 100%);
+}
+
+#smallLights {
+    position: absolute;
+    left: 36%;
+    top: 4.5%;
+    display: flex;
+    width: 19%;
+    justify-content: space-between;
+}
+
+#smallLights > div {
+    width: 1.5vw;
+    height: 1.5vw;
+    border: 1px solid black;
+    border-radius: 50%;
+}
+
+#smallLights > div:nth-child(1) {
+    background-image: radial-gradient(white 2%, red 100%);
+}
+
+#smallLights > div:nth-child(2) {
+    background-image: radial-gradient(white 2%, yellow 100%);
+}
+
+#smallLights > div:nth-child(3) {
+    background-image: radial-gradient(white 2%, green 100%);
 }
