@@ -278,48 +278,12 @@ main {
 }
 
 #rectangle4 {
-    position: absolute;
-    z-index: 2;
-    border-top: 1px solid black;
-    width: 67.5%;
-    height: 1px;
-    background-color: rgba(255, 255, 255, 0);
-    border-bottom-right-radius: 1vw;
-    right: 12.5%;
-    top: 60.5%;
-}
-
-#rectangle5 {
-    position: absolute;
-    border-bottom: 1px solid black;
-    width: 70%;
-    height: 10vw;
-    background-color: white;
-    border-bottom-right-radius: 1vw;
-    right: 10%;
-    top: 29.8%;
-}
-
-#rectangle6 {
-    position: absolute;
-    background: linear-gradient(45deg, rgba(255, 255, 255, 0) 12%, black 13%, white 13%, white 80%, black 80%, rgba(255, 255, 255, 0) 83%);
-    width: 20%;
-    height: 0.25vw;
-    left: 5.5%;
-    top: 56.5%;
-    transform: rotate(45deg);
-}
-
-#rectangle7 {
-    position: absolute;
-    z-index: 2;
-    border-top: 0.1vw solid black;
-    width: 13.55%;
+    margin-right: 12.5%;
+    margin-left: auto;
+    width: 67.7%;
     height: 1vw;
-    background-color: rgba(255, 255, 255, 0);
-    transform: rotate(45deg);
-    left: 7%;
-    top: 56.4%;
+    background-color: rgba(0, 0, 0, 0);
+    border-top: 1px solid black;
 }
 
 #displayC {
