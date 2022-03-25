@@ -310,6 +310,18 @@ main {
     transform: rotate(45deg);
 }
 
+#rectangle7 {
+    position: absolute;
+    z-index: 2;
+    border-top: 0.1vw solid black;
+    width: 13.55%;
+    height: 1vw;
+    background-color: rgba(255, 255, 255, 0);
+    transform: rotate(45deg);
+    left: 7%;
+    top: 56.4%;
+}
+
 #displayC {
     width: 90%;
     height: 88%;
