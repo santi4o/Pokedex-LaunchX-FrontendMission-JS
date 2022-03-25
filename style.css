@@ -280,10 +280,10 @@ main {
 #rectangle4 {
     margin-right: 12.5%;
     margin-left: auto;
-    width: 67.7%;
+    width: 20.1vw;
     height: 1vw;
     background-color: rgba(0, 0, 0, 0);
-    border-top: 1px solid black;
+    border-top: 0.1vw solid black;
 }
 
 #displayC {
