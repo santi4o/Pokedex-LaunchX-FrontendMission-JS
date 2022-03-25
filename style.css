@@ -53,7 +53,7 @@ main {
 #rectangle3 {
     width: 43%;
     left: 0%;
-    top: 21%;
+    top: 20.9%;
 }
 
 #bordered1 {
@@ -339,7 +339,7 @@ main {
 
 #controls1 {
     position: relative;
-    margin-top: 1.5vw;
+    margin-top: 0.6vw;
 }
 
 #buttonsLine1 {
@@ -390,7 +390,7 @@ main {
     width: 7.9vw;
     height: 2.5vw;
     border-radius: 0.5vw;
-    background-image: radial-gradient(rgb(22, 22, 22) 65%, rgb(56, 56, 56) 100%);
+    background-image: radial-gradient(rgb(22, 22, 22) 70%, rgb(56, 56, 56) 100%);
 }
 
 #dPad > div.dPadShadow {
@@ -418,4 +418,49 @@ main {
 
 input {
     font-size: 1vw;
+}
+
+#display2 {
+    width: 90%;
+    height: 33%;
+    border-radius: 0.6vw;
+    margin: auto;
+    background-color: black;
+}
+
+#blueButtons {
+    display: grid;
+    width: 90%;
+    height: 20%;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    background-color: black;
+    border: 0.1vw solid black;
+    border-radius: 0.8vw;
+    overflow: hidden;
+    padding-bottom: 0.15vw;
+    margin: auto;
+    margin-top: 0.6vw;
+}
+
+#blueButtons > div {
+    background-color:darkcyan;
+    border-bottom: 0.01vw solid white;
+    margin: 0.05vw;
+}
+
+#blueButtons > div:nth-child(1) {
+    border-top-left-radius: 0.8vw;
+}
+
+#blueButtons > div:nth-child(5) {
+    border-top-right-radius: 0.8vw;
+}
+
+#blueButtons > div:nth-child(6) {
+    border-bottom-left-radius: 0.8vw;
+}
+
+#blueButtons > div:nth-child(10) {
+    border-bottom-right-radius: 0.8vw;
 }
