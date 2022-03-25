@@ -370,6 +370,7 @@ main {
     border: 0.1vw solid rgb(24, 24, 24);
     border-top: none;
     margin-left: 0.9vw;
+    border-top: 0.01vw solid white;
 }
 
 #buttonsLine1 > div:nth-child(2) {
@@ -446,7 +447,7 @@ input {
 #blueButtons > div {
     background-color:darkcyan;
     border-bottom: 0.01vw solid white;
-    margin: 0.05vw;
+    margin: 0.08vw;
 }
 
 #blueButtons > div:nth-child(1) {
@@ -463,4 +464,70 @@ input {
 
 #blueButtons > div:nth-child(10) {
     border-bottom-right-radius: 0.8vw;
+}
+
+#buttonLine2 {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 1vw;
+    padding-right: 6%;
+}
+
+#buttonLine2 > div {
+    margin-left: 1.5vw;
+    background-image: radial-gradient(rgb(104, 38, 38) 0%, var(--red-dark) 90%);
+}
+
+#whiteButtons {
+    display: inline-flex;
+    margin-left: 5%;
+    background-color: black;
+    border: 0.1vw solid black;
+    border-radius: 0.8vw;
+    overflow: hidden;
+    padding-bottom: 0.15vw;
+    margin-top: 0.8vw;
+}
+
+#whiteButtons > div {
+    width: 5.2vw;
+    height: 3vw;
+    background-color: white;
+    border: 0.01vw solid black;
+}
+
+#whiteButtons > div:first-child {
+    border-top-left-radius: 0.5vw;
+    border-bottom-left-radius: 0.5vw;
+}
+
+#whiteButtons > div:last-child {
+    border-top-right-radius: 0.5vw;
+    border-bottom-right-radius: 0.5vw;
+}
+
+#yellowLight {
+    position: absolute;
+    width: 3vw;
+    height: 3vw;
+    border-radius: 50%;
+    border: 0.01vw solid black;
+    background-image: radial-gradient(white 2%, orange 50%);
+    right: 6.5%;
+    top: 68%;
+}
+
+#displaysLine {
+    display: flex;
+    padding-top: 2.5vw;
+    width: 90%;
+    margin: auto;
+    justify-content: space-between;
+}
+
+#displaysLine > div {
+    width: 44%;
+    height: 4vw;
+    background-color: black;
+    border-radius: 0.7vw;
 }
