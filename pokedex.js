@@ -21,6 +21,7 @@ var specs = {
     types: [],
     height: 0,
     weight: 0,
+    abilities: []
 }
 
 var langDict = {
@@ -49,6 +50,7 @@ function clearDivs() {
     var statNameDivs = document.getElementsByClassName('statName');
     var specsA = document.getElementById('specsA').children;
     var specsB = document.getElementById('specsB').children;
+    var abilities = document.getElementById('abilities');
 
     for (var i = 0; i < statUnitDivs.length; i++) {
         statUnitDivs[i].classList.remove('visible');
@@ -67,6 +69,8 @@ function clearDivs() {
     for (var i = 0; i < specsB.length; i++) {
         specsB[i].textContent = '';
     }
+
+    abilities.textContent = '';
 }
 
 function showNotFound() {
@@ -106,6 +110,7 @@ function capFirstLetter(string) {
 function showSpecs() {
     var specsA = document.getElementById('specsA').children;
     var specsB = document.getElementById('specsB').children;
+    var abilitiesDiv = document.getElementById('abilities');
     
     specsA[0].textContent = 'No. ' + specs.number;
     specsA[1].textContent = capFirstLetter(specs.name);
@@ -115,6 +120,14 @@ function showSpecs() {
             specsA[2].textContent += ','
         }
         specsA[2].textContent += ' ' + capFirstLetter(langDict[specs.types[i].type.name]);
+    }
+
+    abilitiesDiv.textContent = 'Habilidades:'
+    for (var i = 0; i < specs.abilities.length; i++) {
+        if (i != 0) {
+            abilitiesDiv.textContent += ',';
+        }
+        abilitiesDiv.textContent += ' ' + capFirstLetter(specs.abilities[i].ability.name);
     }
 
     specsB[0].textContent = 'Altura: ' + specs.height + 'm';
@@ -164,6 +177,7 @@ const fetchPokemon = () => {
         specs.types = data.types;
         specs.height = data.height / 10;
         specs.weight = data.weight / 10;
+        specs.abilities = data.abilities;
 
         showSpecs();
 

@@ -474,9 +474,19 @@ main {
     margin: auto;
     background-color: black;
     display: flex;
-    justify-content: center;
-    padding-top: 0.2vw;
-    align-items: center;
+    flex-direction: column;
+    justify-content: flex-start;
+    padding-top: 0.1vw;
+}
+
+#abilities {
+    color: greenyellow;
+    font-family: 'VT323';
+    font-size: 1vw;
+    line-height: 0.9vw;
+    text-align: left;
+    align-self: flex-start;
+    margin: 1vw 1vw;
 }
 
 #stats {
@@ -484,7 +494,7 @@ main {
     grid-template-columns: repeat(6, 1fr);
     grid-template-rows: 82% auto;
     width: 98%;
-    height: 98%;
+    height: 65%;
 }
 
 .statLevel {
@@ -504,6 +514,7 @@ main {
     font-family: 'VT323';
     font-size: 1vw;
     color: greenyellow;
+    margin-top: 0.3vw;
 }
 
 .levelUnitOff {
