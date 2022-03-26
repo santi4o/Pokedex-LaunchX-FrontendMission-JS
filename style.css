@@ -465,8 +465,20 @@ main {
     color: greenyellow;
 }
 
-.levelUnit {
+.levelUnitOff {
     background-color: rgb(90, 90, 90);
+}
+
+.levelUnitOn {
+    background-color: greenyellow;
+}
+
+.hidden {
+    display: none;
+}
+
+.visible {
+    display: block;
 }
 
 #blueButtons {
@@ -592,7 +604,7 @@ input {
 
 button {
     font-size: 1.1vw;
-    padding: 0.15vw 0.2vw;
+    padding: 0.15vw 2.5vw;
     background-color: black;
     color: greenyellow;
 }
