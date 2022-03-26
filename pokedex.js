@@ -15,9 +15,69 @@ var stats = [
     {name: 'speed', value: 0, max_value: 200, display_units: 0}
 ];
 
+var specs = {
+    number: 0,
+    name: '',
+    types: [],
+    height: 0,
+    weight: 0,
+}
+
+var langDict = {
+    bug: 'bicho',
+    dragon: 'dragón',
+    fairy: 'hada',
+    fire: 'fuego',
+    ghost: 'fantasma',
+    ground: 'tierra',
+    normal: 'normal',
+    psychic: 'psíquico',
+    steel: 'acero',
+    dark: 'siniestro',
+    electric: 'eléctrico',
+    fighting: 'lucha',
+    flying: 'volador',
+    grass: 'planta',
+    ice: 'hielo',
+    poison: 'veneno',
+    rock: 'roca',
+    water: 'agua',
+}
+
+function clearDivs() {
+    var statUnitDivs = document.getElementsByClassName('levelUnit');
+    var statNameDivs = document.getElementsByClassName('statName');
+    var specsA = document.getElementById('specsA').children;
+    var specsB = document.getElementById('specsB').children;
+
+    for (var i = 0; i < statUnitDivs.length; i++) {
+        statUnitDivs[i].classList.remove('visible');
+        statUnitDivs[i].classList.add('hidden');
+    }
+
+    for (var i = 0; i < statNameDivs.length; i++) {
+        statNameDivs[i].classList.remove('visible');
+        statNameDivs[i].classList.add('hidden');
+    }
+
+    for (var i = 0; i < specsA.length; i++) {
+        specsA[i].textContent = '';
+    }
+
+    for (var i = 0; i < specsB.length; i++) {
+        specsB[i].textContent = '';
+    }
+}
+
+function showNotFound() {
+    pokeImage('./img/pokeball2.webp');
+    var specsA = document.getElementById('specsA').children;
+    specsA[0].textContent = 'Pokemon no encontrado :(';
+}
+
 function showStats(stat_name, stat_units) {
     console.log('stat_name: ' + stat_name);
-    var hpDivs = document.getElementById(stat_name).children;
+    var statUnitDivs = document.getElementById(stat_name).children;
     var statNameDivs = document.getElementsByClassName('statName');
 
     for (var i = 0; i < statNameDivs.length; i++) {
@@ -26,19 +86,40 @@ function showStats(stat_name, stat_units) {
     }
 
     for (var i = 0; i < 15 - stat_units; i++) {
-        hpDivs[i].classList.remove('hidden');
-        hpDivs[i].classList.add('visible');
-        hpDivs[i].classList.remove('levelUnitOn');
-        hpDivs[i].classList.add('levelUnitOff');
+        statUnitDivs[i].classList.remove('hidden');
+        statUnitDivs[i].classList.add('visible');
+        statUnitDivs[i].classList.remove('levelUnitOn');
+        statUnitDivs[i].classList.add('levelUnitOff');
     }
 
     for (var i = 15-stat_units; i < 15; i++) {
-        hpDivs[i].classList.remove('hidden');
-        hpDivs[i].classList.add('visible');
-        hpDivs[i].classList.remove('levelUnitOff');
-        hpDivs[i].classList.add('levelUnitOn');
+        statUnitDivs[i].classList.remove('hidden');
+        statUnitDivs[i].classList.add('visible');
+        statUnitDivs[i].classList.remove('levelUnitOff');
+        statUnitDivs[i].classList.add('levelUnitOn');
+    }
+}
+
+function capFirstLetter(string) {
+    return string.charAt(0).toUpperCase() + string.slice(1);
+}
+
+function showSpecs() {
+    var specsA = document.getElementById('specsA').children;
+    var specsB = document.getElementById('specsB').children;
+    
+    specsA[0].textContent = 'No. ' + specs.number;
+    specsA[1].textContent = capFirstLetter(specs.name);
+    specsA[2].textContent = 'Tipo:'
+    for (var i = 0; i < specs.types.length; i++) {
+        if (i != 0) {
+            specsA[2].textContent += ','
+        }
+        specsA[2].textContent += ' ' + capFirstLetter(langDict[specs.types[i].type.name]);
     }
 
+    specsB[0].textContent = 'Altura: ' + specs.height + 'm';
+    specsB[1].textContent = 'Peso: ' + specs.weight + 'kg';
 }
 
 const fetchPokemon = () => {
@@ -46,42 +127,38 @@ const fetchPokemon = () => {
     const url = `https://pokeapi.co/api/v2/pokemon/${pokeInput}`;
     fetch(url).then((res) => {
         if (res.status != "200") {
-            pokeImage("./img/pokeball.png");
+            clearDivs();
+            showNotFound();
+            return null;
         } else {
             return res.json();
         }
     }).then((data) => {
+        if (data == null || !data.sprites) {
+            return 0;
+        }
         console.log(data);
         //let pokeImg = data.sprites.front_shiny;
         let pokeImg = data.sprites.other.home.front_default;
         pokeImage(pokeImg);
-        stats[0].value = data.stats[0].base_stat;
-        stats[1].value = data.stats[1].base_stat;
-        stats[2].value = data.stats[2].base_stat;
-        stats[3].value = data.stats[3].base_stat;
-        stats[4].value = data.stats[4].base_stat;
-        stats[5].value = data.stats[5].base_stat;
 
-        console.log(stats.length);
         for (var i = 0; i < stats.length; i++) {
-            console.log(i);
+            stats[i].value = data.stats[i].base_stat;
             stats[i].display_units = Math.round((15*stats[i].value) / stats[i].max_value);
             showStats(stats[i].name, stats[i].display_units);
         }
-        
+
+        specs.number = data.id;
+        specs.name = data.name;
+        specs.types = data.types;
+        specs.height = data.height / 10;
+        specs.weight = data.weight / 10;
+
+        showSpecs();
     });
 }
-
-//fetchPokemon()
 
 const pokeImage = (url) => {
     const pokeImg = document.getElementById('pokeImg');
     pokeImg.src = url;
 }
-
-
-
-/*const print = () => {
-    const pokeName = document.getElementById('pokeName').value
-    console.log('I should look for ' + pokeName)
-}*/

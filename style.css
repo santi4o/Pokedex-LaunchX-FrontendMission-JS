@@ -418,12 +418,41 @@ main {
 #greenDisplay {
     position: absolute;
     top: 80%;
-    width: 31%;
+    width: 32%;
     height: 5.5vw;
     border: 0.1vw solid black;
     border-radius: 0.5vw;
-    background-color: rgb(0, 119, 46);
-    margin-left: 8vw;
+    background-color: greenyellow;
+    margin-left: 7.8vw;
+    display: flex;
+    justify-content: center;
+}
+
+#specsA {
+    width: 98%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: black;
+    font-family: 'VT323';
+    font-size: 1.2vw;
+}
+
+#specsA > p, #specsB > p {
+    margin: 0.1vw 0.2vw;
+}
+
+#specsB {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-family: 'VT323';
+    font-size: 1.4vw;
+    text-align: center;
+    color: greenyellow;
 }
 
 #display2 {
@@ -460,8 +489,8 @@ main {
     justify-content: center;
     line-height: 0.9vw;
     text-align: center;
-    font-family: 'Courier New', Courier, monospace;
-    font-size: 0.75vw;
+    font-family: 'VT323';
+    font-size: 1vw;
     color: greenyellow;
 }
 
@@ -478,7 +507,7 @@ main {
 }
 
 .visible {
-    display: block;
+    display: flex;
 }
 
 #blueButtons {
@@ -532,13 +561,14 @@ main {
 
 #whiteButtons {
     display: inline-flex;
-    margin-left: 5%;
     background-color: black;
     border: 0.1vw solid black;
+    padding-bottom: 0.15vw;
     border-radius: 0.8vw;
     overflow: hidden;
-    padding-bottom: 0.15vw;
-    margin-top: 0.6vw;
+    position: absolute;
+    top: 66%;
+    left: 5%
 }
 
 #whiteButtons > div {
@@ -571,15 +601,15 @@ main {
 
 #displaysLine {
     display: flex;
-    padding-top: 2vw;
     width: 90%;
     margin: auto;
+    margin-top: 20%;
     justify-content: space-between;
 }
 
 #displaysLine > div {
     width: 45%;
-    height: 3.8vw;
+    height: 3.9vw;
     background-color: black;
     border-radius: 0.7vw;
 }
@@ -593,7 +623,8 @@ form {
 }
 
 input {
-    font-size: 1.1vw;
+    font-family: 'VT323';
+    font-size: 1.4vw;
     text-align: center;
     width: 90%;
     height: 40%;
@@ -603,8 +634,10 @@ input {
 }
 
 button {
-    font-size: 1.1vw;
-    padding: 0.15vw 2.5vw;
+    border: none;
+    font-family: 'VT323';
+    font-size: 1.3vw;
+    padding: 0.1vw 2.5vw;
     background-color: black;
     color: greenyellow;
 }
