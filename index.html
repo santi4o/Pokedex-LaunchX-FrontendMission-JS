@@ -8,13 +8,6 @@
     <title>Pokédex LaunchX</title>
 </head>
 <body>
-    
-    <!--<h1>Pokedex</h1>
-    <input type="text" placeholder="Pikachu" id="pokeName" name="pokeName"><br>
-    <img id="pokeImg" src="img/pokeball.png" alt="pokemon image" width="150px"><br>
-    <button onclick="fetchPokemon()">Cambiar pokemon</button>
-    -->
-    
     <main>
         <div id="leftCover">
 
@@ -44,7 +37,9 @@
                             <div></div>
                             <div></div>
                         </div>
-                        <div id="displayC"></div>
+                        <div id="displayC">
+                            <img id="pokeImg" src="img/pokeball.png" alt="pokemon image">
+                        </div>
                     </div>
                     <div id="displayB">
                         <div id="displayBottomLight"></div>
@@ -94,7 +89,118 @@
                 <div id="bordered6"></div>
 
                 <div id="rightContainer">
-                    <div id="display2"></div>
+                    <div id="display2">
+                        <div id="stats">
+                            <div class="statLevel" id="hp">
+                                <div class="levelUnit"></div>
+                                <div class="levelUnit"></div>
+                                <div class="levelUnit"></div>
+                                <div class="levelUnit"></div>
+                                <div class="levelUnit"></div>
+                                <div class="levelUnit"></div>
+                                <div class="levelUnit"></div>
+                                <div class="levelUnit"></div>
+                                <div class="levelUnit"></div>
+                                <div class="levelUnit"></div>
+                                <div class="levelUnit"></div>
+                                <div class="levelUnit"></div>
+                                <div class="levelUnit"></div>
+                                <div class="levelUnit"></div>
+                                <div class="levelUnit"></div>
+                            </div>
+                            <div class="statLevel" id="attack">
+                                <div class="levelUnit"></div>
+                                <div class="levelUnit"></div>
+                                <div class="levelUnit"></div>
+                                <div class="levelUnit"></div>
+                                <div class="levelUnit"></div>
+                                <div class="levelUnit"></div>
+                                <div class="levelUnit"></div>
+                                <div class="levelUnit"></div>
+                                <div class="levelUnit"></div>
+                                <div class="levelUnit"></div>
+                                <div class="levelUnit"></div>
+                                <div class="levelUnit"></div>
+                                <div class="levelUnit"></div>
+                                <div class="levelUnit"></div>
+                                <div class="levelUnit"></div>
+                            </div>
+                            <div class="statLevel" id="defense">
+                                <div class="levelUnit"></div>
+                                <div class="levelUnit"></div>
+                                <div class="levelUnit"></div>
+                                <div class="levelUnit"></div>
+                                <div class="levelUnit"></div>
+                                <div class="levelUnit"></div>
+                                <div class="levelUnit"></div>
+                                <div class="levelUnit"></div>
+                                <div class="levelUnit"></div>
+                                <div class="levelUnit"></div>
+                                <div class="levelUnit"></div>
+                                <div class="levelUnit"></div>
+                                <div class="levelUnit"></div>
+                                <div class="levelUnit"></div>
+                                <div class="levelUnit"></div>
+                            </div>
+                            <div class="statLevel" id="specialAttack">
+                                <div class="levelUnit"></div>
+                                <div class="levelUnit"></div>
+                                <div class="levelUnit"></div>
+                                <div class="levelUnit"></div>
+                                <div class="levelUnit"></div>
+                                <div class="levelUnit"></div>
+                                <div class="levelUnit"></div>
+                                <div class="levelUnit"></div>
+                                <div class="levelUnit"></div>
+                                <div class="levelUnit"></div>
+                                <div class="levelUnit"></div>
+                                <div class="levelUnit"></div>
+                                <div class="levelUnit"></div>
+                                <div class="levelUnit"></div>
+                                <div class="levelUnit"></div>
+                            </div>
+                            <div class="statLevel" id="specialDefense">
+                                <div class="levelUnit"></div>
+                                <div class="levelUnit"></div>
+                                <div class="levelUnit"></div>
+                                <div class="levelUnit"></div>
+                                <div class="levelUnit"></div>
+                                <div class="levelUnit"></div>
+                                <div class="levelUnit"></div>
+                                <div class="levelUnit"></div>
+                                <div class="levelUnit"></div>
+                                <div class="levelUnit"></div>
+                                <div class="levelUnit"></div>
+                                <div class="levelUnit"></div>
+                                <div class="levelUnit"></div>
+                                <div class="levelUnit"></div>
+                                <div class="levelUnit"></div>
+                            </div>
+                            <div class="statLevel" id="speed">
+                                <div class="levelUnit"></div>
+                                <div class="levelUnit"></div>
+                                <div class="levelUnit"></div>
+                                <div class="levelUnit"></div>
+                                <div class="levelUnit"></div>
+                                <div class="levelUnit"></div>
+                                <div class="levelUnit"></div>
+                                <div class="levelUnit"></div>
+                                <div class="levelUnit"></div>
+                                <div class="levelUnit"></div>
+                                <div class="levelUnit"></div>
+                                <div class="levelUnit"></div>
+                                <div class="levelUnit"></div>
+                                <div class="levelUnit"></div>
+                                <div class="levelUnit"></div>
+                            </div>
+                            <div class="statName">HP</div>
+                            <div class="statName">Ataque</div>
+                            <div class="statName">Defensa</div>
+                            <div class="statName">Ataque Especial</div>
+                            <div class="statName">Defensa Especial</div>
+                            <div class="statName">Velocidad</div>
+                        </div>
+                    </div>
                     <div id="blueButtons">
                         <div></div>
                         <div></div>
@@ -117,7 +223,12 @@
                     </div>
                     <div id="yellowLight"></div>
                     <div id="displaysLine">
-                        <div></div>
+                        <div class="borderBlink">
+                            <form id="searchForm">
+                                <input id="pokeName" name="pokeName" type="text" placeholder="Buscar Pokemon" required>
+                                <button onclick="fetchPokemon()">Buscar</button>
+                            </form>
+                        </div>
                         <div></div>
                     </div>
                 </div>

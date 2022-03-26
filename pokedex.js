@@ -1,3 +1,11 @@
+var form = document.getElementById("searchForm");
+
+function handleForm(event) {
+    event.preventDefault();
+} 
+
+form.addEventListener('submit', handleForm);
+
 const fetchPokemon = () => {
     const pokeInput = document.getElementById('pokeName').value.toLowerCase();
     const url = `https://pokeapi.co/api/v2/pokemon/${pokeInput}`;

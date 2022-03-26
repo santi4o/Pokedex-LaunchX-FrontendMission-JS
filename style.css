@@ -294,6 +294,15 @@ main {
     margin: auto;
     background-color: black;
     border-radius: 0.5vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#pokeImg {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
 }
 
 #displayTopLights {
@@ -417,22 +426,53 @@ main {
     margin-left: 8vw;
 }
 
-input {
-    font-size: 1vw;
-}
-
 #display2 {
     width: 90%;
-    height: 33%;
+    height: 38%;
     border-radius: 0.6vw;
     margin: auto;
     background-color: black;
+    display: flex;
+    justify-content: center;
+    padding-top: 0.2vw;
+    align-items: center;
+}
+
+#stats {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: 82% auto;
+    width: 98%;
+    height: 98%;
+}
+
+.statLevel {
+    display: grid;
+    grid-template-rows: repeat(15, auto);
+    row-gap: 0.22vw;
+    width: 75%;
+    margin: 0 auto;
+}
+
+.statName {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 0.9vw;
+    text-align: center;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 0.75vw;
+    color: greenyellow;
+}
+
+.levelUnit {
+    background-color: rgb(90, 90, 90);
 }
 
 #blueButtons {
     display: grid;
     width: 90%;
-    height: 20%;
+    height: 19%;
     grid-template-columns: repeat(5, 1fr);
     grid-template-rows: repeat(2, 1fr);
     background-color: black;
@@ -486,7 +526,7 @@ input {
     border-radius: 0.8vw;
     overflow: hidden;
     padding-bottom: 0.15vw;
-    margin-top: 0.8vw;
+    margin-top: 0.6vw;
 }
 
 #whiteButtons > div {
@@ -514,20 +554,85 @@ input {
     border: 0.01vw solid black;
     background-image: radial-gradient(white 2%, orange 50%);
     right: 6.5%;
-    top: 68%;
+    top: 71%;
 }
 
 #displaysLine {
     display: flex;
-    padding-top: 2.5vw;
+    padding-top: 2vw;
     width: 90%;
     margin: auto;
     justify-content: space-between;
 }
 
 #displaysLine > div {
-    width: 44%;
-    height: 4vw;
+    width: 45%;
+    height: 3.8vw;
     background-color: black;
     border-radius: 0.7vw;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    height: 100%;
+}
+
+input {
+    font-size: 1.1vw;
+    text-align: center;
+    width: 90%;
+    height: 40%;
+    background-color: black;
+    border: none;
+    color: greenyellow;
+}
+
+button {
+    font-size: 1.1vw;
+    padding: 0.15vw 0.2vw;
+    background-color: black;
+    color: greenyellow;
+}
+
+button:hover {
+    cursor: pointer;
+}
+
+@-webkit-keyframes borderBlink {    
+    from, to {    
+        border-color: transparent    
+    }    
+    50% {    
+        border-color: white    
+    }    
+}
+
+@keyframes borderBlink {    
+    from, to {    
+        border-color: transparent    
+    }    
+    50% {    
+        border-color: white    
+    }    
+}
+
+.borderBlink{    
+    border:1px solid black;
+}
+
+.borderBlink {    
+    -webkit-animation: borderBlink 1s step-end infinite;    
+    animation: borderBlink 1s step-end infinite;    
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover, 
+input:-webkit-autofill:focus, 
+input:-webkit-autofill:active{
+    -webkit-box-shadow: 0 0 0 30px black inset !important;
+    box-shadow: 0 0 0 30px black inset !important;
+    -webkit-text-fill-color: greenyellow;
 }
