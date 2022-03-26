@@ -240,16 +240,28 @@ main {
     border-radius: 50%;
 }
 
-#smallLights > div:nth-child(1) {
+#smallLights > div:nth-child(1).lightOn {
     background-image: radial-gradient(white 2%, red 100%);
 }
 
-#smallLights > div:nth-child(2) {
+#smallLights > div:nth-child(2).lightOn  {
     background-image: radial-gradient(white 2%, yellow 100%);
 }
 
-#smallLights > div:nth-child(3) {
+#smallLights > div:nth-child(3).lightOn  {
     background-image: radial-gradient(white 2%, green 100%);
+}
+
+#smallLights > div:nth-child(1).lightOff {
+    background-image: radial-gradient(rgb(141, 0, 0) 2%, rgb(151, 0, 0) 100%);
+}
+
+#smallLights > div:nth-child(2).lightOff  {
+    background-image: radial-gradient(rgb(117, 117, 0) 2%, rgb(143, 143, 0) 100%);
+}
+
+#smallLights > div:nth-child(3).lightOff  {
+    background-image: radial-gradient(rgb(0, 87, 0) 2%, rgb(0, 116, 0) 100%);
 }
 
 #displayA {

@@ -76,7 +76,6 @@ function showNotFound() {
 }
 
 function showStats(stat_name, stat_units) {
-    console.log('stat_name: ' + stat_name);
     var statUnitDivs = document.getElementById(stat_name).children;
     var statNameDivs = document.getElementsByClassName('statName');
 
@@ -122,11 +121,26 @@ function showSpecs() {
     specsB[1].textContent = 'Peso: ' + specs.weight + 'kg';
 }
 
+function turnLightOn(number) {
+    var colorLights = document.getElementById('smallLights').children;
+    for (var i = 0; i < colorLights.length; i++) {
+        if (i == number) {
+            colorLights[i].classList.remove('lightOff');
+            colorLights[i].classList.add('lightOn');
+        } else {
+            colorLights[i].classList.remove('lightOn');
+            colorLights[i].classList.add('lightOff');
+        }
+    }
+}
+
 const fetchPokemon = () => {
+    turnLightOn(1);
     const pokeInput = document.getElementById('pokeName').value.toLowerCase();
     const url = `https://pokeapi.co/api/v2/pokemon/${pokeInput}`;
     fetch(url).then((res) => {
         if (res.status != "200") {
+            turnLightOn(0);
             clearDivs();
             showNotFound();
             return null;
@@ -137,10 +151,7 @@ const fetchPokemon = () => {
         if (data == null || !data.sprites) {
             return 0;
         }
-        console.log(data);
-        //let pokeImg = data.sprites.front_shiny;
-        let pokeImg = data.sprites.other.home.front_default;
-        pokeImage(pokeImg);
+
 
         for (var i = 0; i < stats.length; i++) {
             stats[i].value = data.stats[i].base_stat;
@@ -155,6 +166,13 @@ const fetchPokemon = () => {
         specs.weight = data.weight / 10;
 
         showSpecs();
+
+        var pokeImg = new Image();
+        pokeImg.onload = function() {
+            turnLightOn(2);
+            pokeImage(pokeImg.src);
+        }
+        pokeImg.src = data.sprites.other.home.front_default;
     });
 }
 
