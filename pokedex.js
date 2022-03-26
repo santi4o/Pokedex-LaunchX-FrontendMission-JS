@@ -130,8 +130,8 @@ function showSpecs() {
         abilitiesDiv.textContent += ' ' + capFirstLetter(specs.abilities[i].ability.name);
     }
 
-    specsB[0].textContent = 'Altura: ' + specs.height + 'm';
-    specsB[1].textContent = 'Peso: ' + specs.weight + 'kg';
+    specsB[0].textContent = 'Altura: ' + specs.height + ' m';
+    specsB[1].textContent = 'Peso: ' + specs.weight + ' kg';
 }
 
 function turnLightOn(number) {
