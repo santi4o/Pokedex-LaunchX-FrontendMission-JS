@@ -12,7 +12,7 @@ Aldo Santiago Castillo
 - Tomar ese input e ir a consultar el API de [pokeapi](https://pokeapi.co/)
 - mostrar en pantalla los siguientes datos del pokemón ingresado:
     - Nombre
-    - Imágen
+    - Imagen
     - Tipo de pokemón
     - Estadísticas
     - Movimientos
